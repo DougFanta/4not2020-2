@@ -5,6 +5,11 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const db = require("./config/database")
+const dbUser = process.env.DB_USER
+const dbName = process.env.DB_NAME
+const dbPass = process.env.DB_PASS
+db(`mongodb+srv://${dbUser}:${dbPass}@cluster0.hk58y.gcp.mongodb.net/${dbName}?retryWrites=true&w=majority`)
 
 var app = express();
 
