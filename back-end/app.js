@@ -23,4 +23,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 const teste = require('./routes/teste.js')
 app.use('/teste', teste)
+
+const curso = require('./routes/curso.js')
+
+app.use('/curso', curso)
+
 module.exports = app;
