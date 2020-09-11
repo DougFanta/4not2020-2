@@ -18,4 +18,32 @@ controller.novo = async(req, res) => {
 
 }
 
+//operação retrive (all) função listar
+controller.listar = async (req,res) =>{
+    try{
+        let dados = await Curso.find()
+        res.send(dados)
+    }catch(erro){
+        console.log(erro)
+        res.status(500).send(erro)
+    }
+}
+
+//Operação Retrive(one), função obterUm
+
+controller.ObterUm = async (req,res) =>{
+    const id = req.params.id
+    let obj = await Curso.findById(id)
+
+    try{
+        if(obj){
+            res.send(obj)
+        }else{
+            res.status(404).end()
+        }
+    }catch(erro){
+        console.log(erro)
+        res.status(500).send(erro)
+    }
+}
 module.exports = controller
