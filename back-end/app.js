@@ -28,4 +28,6 @@ const curso = require('./routes/curso.js')
 
 app.use('/curso', curso)
 
+const professor = require('./routes/professor')
+app.use('/professor', professor)
 module.exports = app;

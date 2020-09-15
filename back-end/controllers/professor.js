@@ -1,4 +1,4 @@
-const Curso = require("../models/Curso")
+const Professor = require("../models/Professor")
 
 const controller = {}
 
@@ -7,7 +7,7 @@ controller.novo = async(req, res) => {
     //e os envia o BD para a criação de um novo objeto
     try{
 
-    await Curso.create(req.body)
+    await Professor.create(req.body)
     // HTTP 201: Created
     res.status(201).end()
     }catch(erro){
@@ -21,7 +21,7 @@ controller.novo = async(req, res) => {
 //operação retrive (all) função listar
 controller.listar = async (req,res) =>{
     try{
-        let dados = await Curso.find()
+        let dados = await Professor.find()
         res.send(dados)
     }catch(erro){
         console.log(erro)
@@ -33,7 +33,7 @@ controller.listar = async (req,res) =>{
 
 controller.ObterUm = async (req,res) =>{
     const id = req.params.id
-    let obj = await Curso.findById(id)
+    let obj = await Professor.findById(id)
 
     try{
         if(obj){
@@ -54,7 +54,7 @@ controller.atualizar = async(req, res) =>{
 
     // Busca a substituição do conteudo do objeto
 
-    let ret = await Curso.findByIdAndUpdate(id, req.body)
+    let ret = await Professor.findByIdAndUpdate(id, req.body)
 
     //Se encontrou a atualizou, retornamos HTTP 204: No content
     if(ret){
@@ -72,7 +72,7 @@ controller.atualizar = async(req, res) =>{
 controller.excluir = async(req, res) => {
     try{
         const id = req.body._id
-        let ret = await Curso.findByIdAndDelete(id)
+        let ret = await Professor.findByIdAndDelete(id)
         if (ret){
             res.status(204).end()
         }
