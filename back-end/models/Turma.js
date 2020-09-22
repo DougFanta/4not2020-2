@@ -16,11 +16,11 @@ const esquema = mongoose.Schema({
               return valor >= this.data_inicial
           }
       },
-      dias_semana:{
+      dias_semana:[{
           type:String,
           required: true,
           enum:["dom", "seg", "ter", "qua", "qui", "sex", "sab"]
-      },
+      }],
       curso:{
           type: mongoose.ObjectId,
           ref: "Curso",

@@ -21,7 +21,7 @@ controller.novo = async(req, res) => {
 //operação retrive (all) função listar
 controller.listar = async (req,res) =>{
     try{
-        let dados = await Turma.find()
+        let dados = await Turma.find().populate('curso', 'nome').populate('professor').populate('sala_aula', 'nome capacidade')
         res.send(dados)
     }catch(erro){
         console.log(erro)
