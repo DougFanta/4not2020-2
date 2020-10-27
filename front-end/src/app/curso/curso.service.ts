@@ -7,11 +7,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CursoService {
 
-  private apiServer = environment.apiServer
+    private apiServer = environment.apiServer
 	constructor(private http: HttpClient) { }
 	
 	listar(){
-		return this.http.get(this.apiServer + 'curso')
+	    return this.http.get(this.apiServer + 'curso').toPromise()
 	}
 	
 }

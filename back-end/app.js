@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const cors = require('cors')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const db = require("./config/database")
@@ -12,7 +12,7 @@ const dbPass = process.env.DB_PASS
 db(`mongodb+srv://${dbUser}:${dbPass}@cluster0.hk58y.gcp.mongodb.net/${dbName}?retryWrites=true&w=majority`)
 
 var app = express();
-
+app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
