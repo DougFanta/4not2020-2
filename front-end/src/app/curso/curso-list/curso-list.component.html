@@ -12,7 +12,7 @@
     <!-- Carga Horaria Column -->
   <ng-container matColumnDef="carga_horaria">
     <th mat-header-cell *matHeaderCellDef>CH</th>
-    <td mat-cell *matCellDef="let curso"> {{ curso.carga_horaria }} </td>
+    <td mat-cell *matCellDef="let curso"> {{ curso.carga_horaria }} Hrs</td>
   </ng-container>
 
     <!-- Nivel Column -->
@@ -24,7 +24,7 @@
   <!-- Valor Curso Column -->
   <ng-container matColumnDef="valor_curso">
     <th mat-header-cell *matHeaderCellDef>Valor</th>
-    <td mat-cell *matCellDef="let curso"> {{ curso.valor_curso }} </td>
+    <td mat-cell *matCellDef="let curso"> R$ {{ curso.valor_curso }} </td>
   </ng-container>
 
 
