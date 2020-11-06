@@ -2,3 +2,32 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+#content{
+    margin: 40px;
+}
+
+.mat-table{
+    width: 90%;
+    height: 80%;
+    margin: auto;
+}
+.cell-aline-right{
+    text-align: right !important;
+}
+
+.cell-aline-center{
+    text-align: center !important;
+}
+
+.mat-row .mat-raised-button{
+    visibility: hidden;
+}
+
+.mat-row:hover .mat-raised-button{
+    visibility:visible;
+}
+
+.mat-row:hover{
+    filter: brightness(120%);
+}
